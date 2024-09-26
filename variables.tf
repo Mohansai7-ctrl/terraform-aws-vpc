@@ -1,6 +1,5 @@
 variable "vpc_cidr" {
-    type = list
-    default = {}
+    #default = {}
 }
 
 variable "enabling_dns_hostnames" {
@@ -33,7 +32,7 @@ variable "public_subnet_cidrs" {
     }
     
 }
-variable "private_subnet_tags" {
+variable "public_subnet_tags" {
     default = {}
 }
 

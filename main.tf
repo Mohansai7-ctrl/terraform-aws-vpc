@@ -74,7 +74,7 @@ resource "aws_subnet" "database" {
 
 
 #creating default subnet id(for other vpc)
-resource "aws_db_subnet_group" "db_subnet" {
+resource "aws_db_subnet_group" "default" {
     name = local.resource_name
     subnet_id = aws_subnet.database[*].id
 
@@ -85,6 +85,11 @@ resource "aws_db_subnet_group" "db_subnet" {
             Name = local.resource_name
         }
     )
+
+}
+    
+
+
 
 #4)creating elastic ip:
 
