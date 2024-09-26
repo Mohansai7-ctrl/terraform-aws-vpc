@@ -76,7 +76,7 @@ resource "aws_subnet" "database" {
 #creating default subnet id(for other vpc)
 resource "aws_db_subnet_group" "default" {
     name = local.resource_name
-    subnet_id = aws_subnet.database[*].id
+    subnet_ids = aws_subnet.database[*].id   #subnet_ids should be plural
 
     tags = merge(
         var.common_tags,
@@ -109,7 +109,7 @@ resource "aws_eip" "nat" {
 #5)creating nat gateway
 resource "aws_nat_gateway" "expense_nat" {
     allocation_id = aws_eip.nat.id
-    subnet_id = aws_subnet.public[*].id
+    subnet_id = aws_subnet.public[0].id  #Here, we are placing nat in public[0] means in us-east-1a zone subnet 1, no need to setup and provide nat in another region us-east-1b or in subnet 2, to reduce cost
 
     tags = merge(
         var.common_tags,

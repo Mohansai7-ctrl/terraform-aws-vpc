@@ -1,5 +1,5 @@
 data "aws_availability_zones" "available" {
-    state = available
+    state = "available"  #have to give state in quoted ""
 }
 
 #These below 2 details are related to default vpc with which peer connection will be done.

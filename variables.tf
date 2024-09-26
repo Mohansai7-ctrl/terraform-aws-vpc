@@ -6,6 +6,10 @@ variable "enabling_dns_hostnames" {
     default = true
 }
 
+variable "common_tags" {
+    default = {}
+}
+
 variable "project_name" {
     type = string
 
@@ -52,13 +56,27 @@ variable "private_subnet_tags" {
 variable "database_subnet_cidrs" {
     type = list
     validation {
-        condition = length(var.database_subnet_cidrs)
+        condition = length(var.database_subnet_cidrs) == 2
         error_message = "User has to provide 2 respective subnet cidr blocks"
     }
 }
 variable "database_subnet_tags" {
     default = {}
 }
+
+variable "public_route_table_tags" {
+    default = {}
+}
+
+variable "private_route_table_tags" {
+    default = {}
+}
+
+variable "database_route_table_tags" {
+    default = {}
+}
+
+
 
 
 variable "eip_tags" {
