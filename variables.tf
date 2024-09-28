@@ -98,6 +98,7 @@ variable "subnet_group_tags" {
 #By default, we are not allowing the peering connection by disabling the default as below, but if user wants then that can be provided by means of user module values
 
 variable "is_peering_required" {
+    type = bool
     default = false
 }
 

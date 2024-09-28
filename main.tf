@@ -74,7 +74,7 @@ resource "aws_subnet" "database" {
 
 
 #creating default subnet id(for other vpc)
-resource "aws_db_subnet_group" "default" {
+resource "aws_db_subnet_group" "default" {  #This will create a database subnet group of all database subnets in aws service RDS
     name = local.resource_name
     subnet_ids = aws_subnet.database[*].id   #subnet_ids should be plural
 

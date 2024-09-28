@@ -1,6 +1,7 @@
 output "vpc_id" {
-    value = aws_vpc.main.id
+    value = aws_vpc.main.id  #here value as resource_type.resource_name and can be modified to get as required output. output name and value names need not be same and we get these output value names in readme.MD File from developer, id == attribute reference
 }
+
 
 
 output "public_subnet_ids"{
