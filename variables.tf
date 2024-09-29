@@ -10,8 +10,8 @@ variable "common_tags" {
     default = {}
 }
 
-variable "project_name" {
-    type = string
+variable "project" {
+    type = string                   #If nothing provided means, it is mandatory and should be provide in child module variables.tf as value passing
 
 }
 
