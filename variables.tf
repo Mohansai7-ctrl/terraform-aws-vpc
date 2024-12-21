@@ -1,5 +1,5 @@
 variable "vpc_cidr" {
-    #default = {}
+                             #here as we didnt provided anything, but mentioned here so it should be must, this values to be provided by child module(expense-infra-dev) varialbe which uses this root module
 }
 
 variable "enabling_dns_hostnames" {
